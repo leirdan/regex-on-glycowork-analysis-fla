@@ -1,5 +1,4 @@
-% Capítulo 2
-\chapter{Capítulo 2}
+\chapter{Glycan RegEx}
 
 Neste capítulo, descrevemos o funcionamento do sistema \texttt{Glycan RegEx}
 implementado no módulo \texttt{glycowork.motif.regex}, suas funções principais,
@@ -12,27 +11,25 @@ motifs. Tal sistema foi proposto como uma adaptação das tradicionais RegEx de
 ciência da computação, permitindo a detecção de motifs na estrutura não linear
 dos glicanos, possibilitando buscas precisas e otimizadas nestes elementos.
 
-\section{Estrutura e funções do módulo}
+\section{Conceito e funcionamento}
 
 O \texttt{Glycan RegEx} se baseia na tradução de padrões RegEx para operações
 de isomorfismo de subgrafos dentro das estruturas moleculares de glicanos.
-Quando o usuário fornece um padrão
-%, por exemplo, um motif glicosídico como \texttt{Neu5Ac$\alpha$2-3Gal$\beta$1-4(Fuc$\alpha$1-3)GlcNAc}, 
-o sistema decompõe esse padrão em unidades menores, chamadas de módulos
-homogêneos, correspondentes a monossacarídeos e ligações individuais. Cada
-módulo é então processado para identificar as possíveis correspondências no
-grafo do glicano, permitindo localizar subestruturas equivalentes de forma
-independente da forma textual em que o glicano foi representado. Isso é
-essencial, já que o módulo aceita diversos formatos de entrada, como GlycoCT,
-Oxford e demais notações.
+Quando o usuário fornece um padrão o sistema decompõe este padrão em unidades
+menores, chamadas de módulos homogêneos, correspondentes a monossacarídeos e
+ligações individuais. Cada módulo é então processado para identificar as
+possíveis correspondências no grafo do glicano, permitindo localizar
+subestruturas equivalentes de forma independente da forma textual em que o
+glicano foi representado. Isso é essencial, já que o módulo aceita diversos
+formatos de entrada, como GlycoCT, Oxford e demais notações.
 
-Estas RegEx tem uma sintaxe muito similar às clássicas RegEx textuais mas a
-semântica é bastante diferente: como os glicanos não são simples cadeias de
-caracteres mas sim estruturas que podem ser representadas por grafos, o
-\texttt{Glycan RegEx} deve buscar não por símbolos (a, b, c) mas por
-monossacarídeos (GlcNac, Man) e suas ligações; como exemplo, buscar pelo motif
-$A\alpha1-3B$, onde $A$ e $B$ são monossacarídeos quaisquer, requer buscar em
-qualquer ponto do grafo do glicano onde essa ligação $\alpha1-3$ ocorre.
+Estas RegEx têm uma sintaxe muito similar às clássicas RegEx textuais mas com
+uma semântica diferente: como os glicanos não são simples cadeias de caracteres
+mas sim estruturas que podem ser representadas por grafos, o \texttt{Glycan
+	RegEx} deve buscar não por símbolos (a, b, c) mas por monossacarídeos (GlcNac,
+Man) e suas ligações; como exemplo, buscar pelo motif $A\alpha1-3B$, onde $A$ e
+$B$ são monossacarídeos quaisquer, requer buscar em qualquer ponto do grafo do
+glicano onde essa ligação $\alpha1-3$ ocorre.
 
 Desse modo, este modelo de RegEx permite suporte a modificadores,
 quantificadores, operadores de busca contextual e curingas mas com novos
