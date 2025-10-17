@@ -147,12 +147,13 @@ com isomorfismo de subgrafo e o uso de um sistema de expressões regulares
 específico para glicanos.
 
 Sem o uso das expressões regulares, há a necessidade de uma base estática de
-motifs já conhecidos - como pode ser vista no arquivo
-\texttt{common\_names.json} do próprio framework -, o uso de muitas combinações
-de padrões para detectar motifs complexos e específicos do glicano e a
-dificuldade de capturar contextos maiores, como um motif presente apenas em um
-ramo do glicano. Todos esses fatores culminam em um uso bastante rígido e, por
-vezes, difícil de representar de forma computacional.
+motifs já conhecidos. Essa base pode ser observada no arquivo
+\texttt{common\_names.json} do próprio framework. Além disso, torna-se
+necessário o uso de múltiplas combinações de padrões para detectar motifs
+complexos e específicos do glicano, bem como lidar com a dificuldade de
+capturar contextos mais amplos, como a ocorrência de um motif presente apenas
+em um ramo do glicano. Todos esses fatores culminam em um uso bastante rígido
+e, por vezes, difícil de representar de forma computacional.
 
 Com a introdução do sistema \texttt{Glycan RegEx} é possível escrever padrões
 de buscas de motifs em um formato mais declarativo e eficaz, com uso de
